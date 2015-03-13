@@ -36,3 +36,36 @@ module.exports = class Stopwatch
             return @accumulator + hrtimeDiffToNanos diff
         else
             return @accumulator
+
+    # Format the elapsed time of the stopwatch in a human-readable format
+    format: ->
+        return @formatDuation getTime
+
+    # Format the supplied duration (in nanoseconds) in a human-readable format
+    formatDuration: (nanos) ->
+        if nanos >= 3600000000000
+            minutes = nanos / 60000000000
+            return Math.floor(minutes / 60) + " h, " + Math.floor(minutes % 60) + " min"
+
+        if nanos >= 60000000000
+            seconds = nanos / 1000000000
+            return Math.floor(seconds / 60) + " min, " + Math.floor(seconds % 60) + " s"
+
+        if nanos >= 1000000000
+            millis = nanos / 1000000
+            return Math.floor(millis / 1000) + "." + @zPad(Math.floor(millis % 1000)) + " s"
+
+        if nanos >= 1000000
+            micros = nanos / 1000
+            return Math.floor(micros / 1000) + "." + @zPad(Math.floor(micros % 1000)) + " ms"
+
+        return Math.floor(nanos / 1000) + "." + @zPad(Math.floor(nanos % 1000)) + " us"
+
+    # Pad value with zeros to at most three places
+    zPad: (value) ->
+        if value < 10
+            return "00" + value
+        if value < 100
+            return "0" + value
+        return "" + value
+
