@@ -102,7 +102,7 @@ describe "stopwatch", ->
             watch.start()
             watch.stop()
             assert.equal watch.format(), watch.toString()
-	    done()
+            done()
         catch err
             done err
 
