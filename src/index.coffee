@@ -39,11 +39,11 @@ module.exports = class Stopwatch
 
     # Format the elapsed time of the stopwatch in a human-readable format
     format: ->
-        return @formatDuation getTime
+        return @formatDuation getTime()
 
     # An alias to the format() method
     toString: ->
-        return @format
+        return @format()
 
     # Format the supplied duration (in nanoseconds) in a human-readable format
     formatDuration: (nanos) ->

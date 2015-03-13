@@ -98,11 +98,11 @@ describe "stopwatch", ->
     it "should return matching values from both format and toString methods", (done) ->
         watch = new HRStopwatch({start: false})
         try
-            assert.equal watch.format() watch.toString()
-
+            assert.equal watch.format(), watch.toString()
             watch.start()
             watch.stop()
-            assert.equal watch.format() watch.toString()
+            assert.equal watch.format(), watch.toString()
+	    done()
         catch err
             done err
 
