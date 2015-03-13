@@ -89,6 +89,8 @@ describe "stopwatch", ->
             assert.equal watch.formatDuration(1999), "1.999 us"
             assert.equal watch.formatDuration(1000), "1.000 us"
             assert.equal watch.formatDuration(999), "0.999 us"
+            assert.equal watch.formatDuration(1), "0.001 us"
+            assert.equal watch.formatDuration(0), "0.000 us"
             done()
         catch err
             done err
