@@ -41,6 +41,10 @@ module.exports = class Stopwatch
     format: ->
         return @formatDuation getTime
 
+    # An alias to the format() method
+    toString: ->
+        return @format
+
     # Format the supplied duration (in nanoseconds) in a human-readable format
     formatDuration: (nanos) ->
         if nanos >= 3600000000000
