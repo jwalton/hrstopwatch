@@ -27,6 +27,8 @@ Usage
 
     elapsed = watch.getTime() # Returns the time elapsed, in nanoseconds, since construction.
 
+    elapsedStr = watch.format() # Return a human-readable string
+
     elapsed = watch.stop() # Pauses the stopwatch.  getTime() will now return the same value on
                            # subsequent calls until start() is called again.
 
