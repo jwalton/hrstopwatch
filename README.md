@@ -3,6 +3,8 @@
 HRStopwatch
 ===========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwalton/hrstopwatch.svg)](https://greenkeeper.io/)
+
 A stopwatch class built around [`process.hrtime()`](http://nodejs.org/api/process.html#process_process_hrtime),
 with all the usual stopwatch methods like "start" and "stop".
 
